@@ -1,4 +1,4 @@
-let translateToFrench = ()=>{
+let EnglishToFrench = ()=>{
     textToTranslate = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
@@ -11,7 +11,7 @@ let translateToFrench = ()=>{
     xhttp.send();
 }
 
-let translateToEnglish = ()=>{
+let FrenchToEnglish = ()=>{
     textToTranslate = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
@@ -21,6 +21,32 @@ let translateToEnglish = ()=>{
         }
     };
     xhttp.open("GET", "frenchToEnglish?textToTranslate"+"="+textToTranslate, true);
+    xhttp.send();
+}
+
+let NorvegianToFrench = ()=>{
+    textToTranslate = document.getElementById("textToTranslate").value;
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("translated_text").innerHTML = xhttp.responseText;
+        }
+    };
+    xhttp.open("GET", "norvegianToFrench?textToTranslate"+"="+textToTranslate, true);
+    xhttp.send();
+}
+
+let FrenchToNorvegian = ()=>{
+    textToTranslate = document.getElementById("textToTranslate").value;
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("translated_text").innerHTML = xhttp.responseText;
+        }
+    };
+    xhttp.open("GET", "frenchToNorvegian?textToTranslate"+"="+textToTranslate, true);
     xhttp.send();
 }
 
