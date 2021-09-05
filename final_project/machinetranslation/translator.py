@@ -44,27 +44,26 @@ def french_to_english(french_text):
         english_text =  translation['translations'][0]['translation']
     return english_text
 
-def norvegian_to_french(norvegien_text):
-    """ traduit norvegien en francais"""
-    
+def norvegian_to_english(norvegien_text):
+    """ traduit norvegien en anglais"""
     if norvegien_text is None:
-        french_text = None
+        english_text = None
     else:
         l_t = get_language_translator(apikey, version, url)
         translation = l_t.translate(
             text=norvegien_text,
-            model_id='nn-fr').get_result()
-        french_text = translation['translations'][0]['translation']
-    return french_text
+            model_id='nb-en').get_result()
+        english_text = translation['translations'][0]['translation']
+    return english_text
 
-def french_to_norvegian(french_text):
-    """ traduit francais en norvegien"""
-    if french_text is None:
+def english_to_norvegian(english_text):
+    """ traduit anglais en norvegien"""
+    if english_text is None:
         norvegien_text=None
     else:
         l_t = get_language_translator(apikey, version, url)
         translation = l_t.translate(
-            text=french_text,
-            model_id='fr-nn').get_result()
+            text=english_text,
+            model_id='en-nb').get_result()
         norvegien_text =  translation['translations'][0]['translation']
     return norvegien_text

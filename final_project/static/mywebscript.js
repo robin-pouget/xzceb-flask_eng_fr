@@ -24,7 +24,7 @@ let FrenchToEnglish = ()=>{
     xhttp.send();
 }
 
-let NorvegianToFrench = ()=>{
+let NorvegianToEnglish = ()=>{
     textToTranslate = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
@@ -33,11 +33,11 @@ let NorvegianToFrench = ()=>{
             document.getElementById("translated_text").innerHTML = xhttp.responseText;
         }
     };
-    xhttp.open("GET", "norvegianToFrench?textToTranslate"+"="+textToTranslate, true);
+    xhttp.open("GET", "norvegianToEnglish?textToTranslate"+"="+textToTranslate, true);
     xhttp.send();
 }
 
-let FrenchToNorvegian = ()=>{
+let EnglishToNorvegian = ()=>{
     textToTranslate = document.getElementById("textToTranslate").value;
 
     let xhttp = new XMLHttpRequest();
@@ -46,7 +46,7 @@ let FrenchToNorvegian = ()=>{
             document.getElementById("translated_text").innerHTML = xhttp.responseText;
         }
     };
-    xhttp.open("GET", "frenchToNorvegian?textToTranslate"+"="+textToTranslate, true);
+    xhttp.open("GET", "englishToNorvegian?textToTranslate"+"="+textToTranslate, true);
     xhttp.send();
 }
 
